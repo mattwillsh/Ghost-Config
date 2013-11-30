@@ -24,7 +24,7 @@ This is the prefered method of building the RPM packages.
 * Install [EPEL](http://fedoraproject.org/wiki/EPEL) access from [RPM](http://www.mirrorservice.org/sites/dl.fedoraproject.org/pub/epel/6/i386/repoview/epel-release.html)
 * Install the build tools
 ```sh
-sudo yum install rpmdevtools rpm-build mock yum-utils git gpg
+sudo yum install rpmdevtools rpm-build mock yum-utils git gpg expect
 ```
 * Add your user to the mock group
 ```
