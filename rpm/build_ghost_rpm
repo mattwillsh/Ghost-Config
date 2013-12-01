@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-[[ ! -x $( which mock ) ]] &&
+[[ ! -x /usr/bin/mock ]] &&
   { echo "This script requires mock" >&2; exit 1; }
 
 ###
@@ -170,7 +170,7 @@ function build_srpm ()
     download_ghost_source_zip $release_number $rpm_sources ||
       fatal "Failed to download Ghost $release_number zip file"
 
-    mock --buildsrpm --no-cleanup-after \
+    /usr/bin/mock --buildsrpm --no-cleanup-after \
       -r $mock_root \
       -D "_ver $release_number" \
       --sources "$rpm_sources" \
@@ -209,7 +209,7 @@ function build_rpm ()
   if [ ! -f "$rpms_path"/ghost-$release_number-*.rpm ]
   then
 
-    mock -r $mock_root \
+    /usr/bin/mock -r $mock_root \
       --arch $rpm_arch \
       -D "_ver $release_number" \
       $GHOST_MOCK_VERBOSITY \
